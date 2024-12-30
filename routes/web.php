@@ -128,10 +128,10 @@ Route::middleware('admin')->prefix('admin')->group( function () {
         Route::delete('/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
     });
     Route::prefix('payroll')->group(function() {
-        
+
         Route::get('/', [PayrollController::class, 'index'])->name('admin.payroll.index');
         Route::get('/create', [PayrollController::class, 'create'])->name('admin.payroll.create');
-        
+
 
     });
     Route::post('/calculate', [PayrollController::class, 'calculatePayroll'])->name('admin.calculate.payroll');
@@ -194,10 +194,10 @@ Route::middleware('hr')->prefix('hr-manager')->group( function () {
 Route::middleware('payroll')->prefix('manager')->group( function () {
     Route::get('/', [AdminController::class, 'index'])->name('payroll.dashboard');
     Route::prefix('payroll')->group(function() {
-        
+
         Route::get('/', [PayrollController::class, 'index'])->name('manager.payroll.index');
         Route::get('/create', [PayrollController::class, 'create'])->name('manager.payroll.create');
-        
+
 
     });
     Route::post('/calculate', [PayrollController::class, 'calculatePayroll'])->name('manager.calculate.payroll');

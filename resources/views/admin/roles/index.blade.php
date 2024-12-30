@@ -51,7 +51,7 @@
                 </td>
                 <td class="d-none d-md-table-cell">{{ $role->created_at->diffforhumans() }}</td>
                 <td width="90px">
-                  <form action="{{ Auth::user()->role->slug === 'super-admin' ? route('roles.edit', $role->id) : '#' }}" method="post">
+                  <form action="{{ Auth::user()->role->slug === 'super-admin' ? route('roles.edit', $role->id) : '#'  }}" method="post">
                     @csrf
                     @method("delete")
                     <a href="{{ Auth::user()->role->slug === 'super-admin' ? route('roles.destroy', $role->id) : '#' }}" class="btn btn-outline-primary btn-sm">
